@@ -1,0 +1,107 @@
+@import '~terriajs-variables';
+@import '../../../Sass/common/mixins';
+
+// D3 Axis
+.chart {
+  :global {
+    .line-chart .axis path,
+    .line-chart .axis line {
+      fill: none;
+      stroke: none; // Hide the axes if the chart is outside the chart panel.
+      stroke-width: 1px;
+      shape-rendering: crispEdges;
+    }
+
+    .line-chart .selection circle {
+      fill: white;
+      stroke: white;
+      stroke-width: 1;
+      opacity: 0.65;
+    }
+
+    .line-chart .selection line {
+      stroke: white;
+      opacity: 0.65;
+      stroke-width: 1;
+    }
+
+    .line-chart .plot-area {
+      fill: none;
+    }
+
+    .line-chart path.line {
+      stroke-width: 2;
+    }
+
+    .linechart-title {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      position: absolute;
+      text-align: center;
+      overflow: hidden;
+      height: 18px
+    }
+
+    .linechart-title .color {
+      display: inline-block;
+      width: 16px;
+      height: 2px;
+      margin: 0 5px 4px 7px;
+    }
+
+    .linechart-title .name {
+      margin-right: 7px;
+      font-family: monospace;
+      font-size: 110%;
+    }
+  }
+}
+
+.tool-tip {
+  color: $text-light;
+  z-index: 10;
+  background-color: $chart-darker;
+  padding: 5px 5px 10px 10px;
+  font-family: monospace;
+
+  :global {
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .color {
+      width: 16px;
+      height: 2px;
+      margin: 0 0 4px 0;
+      display: inline-block;
+      margin-right: 11px;
+      margin-left: -5px;
+    }
+
+    .value {
+      min-width: 80px;
+    }
+
+    p {
+      margin: 1px 0;
+    }
+
+    .x-value {
+      margin-bottom: 10px;
+    }
+
+    .category-name {
+      margin-top: 5px;
+    }
+
+    td {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+  }
+}
+
