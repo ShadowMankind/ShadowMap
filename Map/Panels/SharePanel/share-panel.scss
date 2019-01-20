@@ -1,0 +1,113 @@
+@import '~terriajs-variables';
+@import '../../../../Sass/common/mixins';
+
+.share-panel {
+  font-size: $font-size-mid-small;
+}
+
+.dropdown-inner {
+  width: $share-panel-width;
+  @include transform-origin(50%, top);
+}
+
+.heading-label {
+
+}
+
+.btn--wrapper {
+  text-align: right;
+}
+
+.btn--advanced {
+  outline: 0;
+}
+
+.btn--share {
+  composes: btn--share from '../../../../Sass/common/_buttons.scss';
+}
+
+.img--share {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+@include empty-module('link-wrapper');
+
+.link {
+  @include link($overlay);
+}
+
+.paragraph {
+  margin: $padding 0;
+  display: block;
+}
+
+.field {
+  composes: field from '../../../../Sass/common/_form.scss';
+  color: #ddd;
+  background: $overlay;
+}
+.clipboard{
+  margin: 10px 0 0 0;
+}
+
+.shareUrlfield{
+  composes: field from '../../../../Sass/common/_form.scss';
+  background: $overlay;
+  color: #fff!important;
+  &::selection {
+    background: $color-primary;; /* WebKit/Blink Browsers */
+    color: #fff;
+  }
+  &::-moz-selection {
+    background: $color-primary;; /* Gecko Browsers */
+    color: #fff;
+  }
+}
+
+.mobileHeader{
+  margin-bottom: 10px;
+}
+
+.shorten-url {
+  button {
+    text-align: left;
+    border: 0px;
+    background: transparent;
+    outline: 0;
+  }
+  svg{
+    display: inline;
+    padding-right: 5px;
+    fill: #fff;
+    height: 14px;
+    width: 14px;
+  }
+}
+
+.explanation {
+  font-size: smaller;
+  font-weight: lighter;
+  color: $text-light-dimmed;
+}
+
+.format-button, .print-button {
+  composes: btn from '../../../../Sass/common/_buttons.scss';
+  composes: btn-primary from '../../../../Sass/common/_buttons.scss';
+  width: auto;
+  display: inline;
+  margin: 2px;
+}
+
+.print-view-loader {
+  fill: $text-light;
+}

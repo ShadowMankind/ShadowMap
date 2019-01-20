@@ -1,0 +1,48 @@
+@import '~terriajs-variables';
+@import '../../Sass/common/mixins';
+
+.dropdown {
+  position: relative;
+}
+
+.list {
+  composes: list-reset from '../../Sass/common/_base.scss';
+
+  @include transform (scaleY(0));
+  @include transition(transform $animation-fast cubic-bezier(0.19, 1, 0.22, 1));
+  @include transform-origin(center, top);
+
+  position: fixed;
+  overflow: hidden;
+  z-index: 9999;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: $radius-small;
+
+  &.is-open {
+    transform: scaleY(1);
+  }
+}
+
+.btn--dropdown {
+  composes: btn from '../../Sass/common/_buttons.scss';
+  composes: btn-primary from '../../Sass/common/_buttons.scss';
+  composes: btn-transparent from '../../Sass/common/_buttons.scss';
+}
+
+.btn--option {
+  composes: btn from '../../Sass/common/_buttons.scss';
+  composes: btn-transparent from '../../Sass/common/_buttons.scss';
+  composes: btn--small from '../../Sass/common/_buttons.scss';
+
+  width: 100%;
+  color: $text-black;
+
+  &:hover, &:focus {
+    color: $dropdown-hover-color;
+  }
+
+  &.is-selected {
+    color: $color-primary;
+  }
+}
